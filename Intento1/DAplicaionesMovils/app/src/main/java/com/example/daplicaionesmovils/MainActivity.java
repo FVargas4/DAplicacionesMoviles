@@ -3,6 +3,7 @@ package com.example.daplicaionesmovils;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtViewManager;
     ImageView imgViewManager;
     Intent myIntent;
-
+    Context myContext;
 
 
     @Override
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                     imgViewManager.setVisibility(View.VISIBLE);
                     txtViewManager.setText("My second App");
                 }
-                myIntent = new Intent(MainActivity.this, ChildActivity.class);
+                myIntent = new Intent(myContext, ChildActivity.class);
                 myIntent.putExtra("myExtra", txtViewManager.getText().toString());
 
                 startActivity(myIntent);
